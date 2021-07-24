@@ -2,9 +2,9 @@ package main
 
 type Client interface {
 
-	 Object getClient()
+	 GetClient() interface{}
 
-	 HttpResponse request(HttpRequest request, Function<RawResponse, HttpResponse<T>> transformer);
+	 Request(HttpRequest request, Function<RawResponse, HttpResponse<T>> transformer) HttpResponse 
  
 	 default <T> HttpResponse<T> request(HttpRequest request, Function<RawResponse, HttpResponse<T>> transformer, Class<?> resultType){
 		 return request(request, transformer);
@@ -12,6 +12,6 @@ type Client interface {
 
 	 Stream<Exception> close();
  
-	 void registerShutdownHook();
+	 RegisterShutdownHook()
 
 }

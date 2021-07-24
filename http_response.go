@@ -100,3 +100,15 @@ type HttpResponse interface {
 	 */
 	GetCookies() Cookies
 }
+
+type BytesHttpResponse interface {
+}
+
+type StringHttpResponse interface {
+}
+
+type ObjectHttpResponse interface {
+}
+
+type JsonHttpResponse interface {
+}
