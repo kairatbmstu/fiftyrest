@@ -12,7 +12,7 @@ type Interceptor interface {
 	 * @param request the request
 	 * @param config the current configuration
 	 */
-	OnRequest(HttpRequest request, Config config)
+	OnRequest(request HttpRequest, config Config)
 
 	/**
 	 * Called just after the request. This can be used to view the response,
