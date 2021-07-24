@@ -1,5 +1,7 @@
 package main
 
+import "io"
+
 type RawResponse interface {
 	GetStatus() int
 	GetStatusText() string
@@ -7,8 +9,8 @@ type RawResponse interface {
 	GetContent() []byte // InputStream
 	GetContentAsBytes() []byte
 	GetContentAsString() string
-	GetContentAsStringWithCharset(String charset) string
-	GetContentReader() Reader //InputStreamReader
+	GetContentAsStringWithCharset(charset string) string
+	GetContentReader() io.ByteReader //InputStreamReader
 	HasContent() bool
 	GetContentType() string
 	GetEncoding() string
