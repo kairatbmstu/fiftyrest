@@ -174,7 +174,7 @@ type HttpRequest interface {
 	  * Executes the request and returns the response with the body mapped into a JsonNode
 	  * @return response
 	  */
-	 HttpResponse<JsonNode> asJson();
+	  AsJson() JsonHttpResponse
  
  
 	 /**
@@ -183,7 +183,7 @@ type HttpRequest interface {
 	  * @param <T> the return type
 	  * @return a response
 	  */
-	  asObject(Class<? extends T> responseClass) HttpResponse
+	  asObject() HttpResponse
  
 	 /**
 	  * Executes the request and returns the response with the body mapped into T by a configured ObjectMapper
