@@ -14,31 +14,35 @@ type Config struct {
 	// private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>();
 	// private Headers headers;
 	// private Proxy proxy;
-	// private int connectionTimeout;
-	// private int socketTimeout;
-	// private int maxTotal;
-	// private int maxPerRoute;
-	// private boolean followRedirects;
-	// private boolean cookieManagement;
-	// private boolean useSystemProperties = true;
-	// private String defaultResponseEncoding = StandardCharsets.UTF_8.name();
+	ConnectionTimeout       int
+	SocketTimeout           int
+	MaxTotal                int
+	MaxPerRoute             int
+	FollowRedirects         bool
+	CookieManagement        bool
+	UseSystemProperties     bool   // default value is true
+	defaultResponseEncoding string // = StandardCharsets.UTF_8.name();
 	// private Function<Config, AsyncClient> asyncBuilder;
 	// private Function<Config, Client> clientBuilder;
-	// private boolean requestCompressionOn = true;
-	// private boolean automaticRetries;
-	// private boolean verifySsl = true;
+	RequestCompressionOn bool // default = true;
+	AutomaticRetries     bool
+	VerifySsl            bool // default = true;
 	// private boolean addShutdownHook = false;
 	// private KeyStore keystore;
 	// private Supplier<String> keystorePassword = () -> null;
 	// private String cookieSpec;
 	// private UniMetric metrics = new NoopMetric();
-	// private long ttl = -1;
+	ttl int64 //default value = -1;
 	// private SSLContext sslContext;
 	// private String[] ciphers;
 	// private String[] protocols;
 	// private CompoundInterceptor interceptor = new CompoundInterceptor();
 	// private HostnameVerifier hostnameVerifier;
-	// private String defaultBaseUrl;
+	DefaultBaseUrl string
 	// private CacheManager cache;
+
+}
+
+func NewDefaultConfig() {
 
 }
