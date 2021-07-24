@@ -102,13 +102,21 @@ type HttpResponse interface {
 }
 
 type BytesHttpResponse interface {
+	HttpResponse
 }
 
 type StringHttpResponse interface {
+	HttpResponse
 }
 
 type ObjectHttpResponse interface {
+	HttpResponse
 }
 
 type JsonHttpResponse interface {
+	HttpResponse
+}
+
+type FileHttpResponse interface {
+	HttpResponse
 }

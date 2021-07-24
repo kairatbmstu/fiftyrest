@@ -160,7 +160,7 @@ type HttpRequest interface {
 	  * Executes the request and returns the response with the body mapped into a String
 	  * @return response
 	  */
-	 asString() StringHttpResponse;
+	 AsString() StringHttpResponse;
  
 	 
 	 /**
@@ -183,15 +183,7 @@ type HttpRequest interface {
 	  * @param <T> the return type
 	  * @return a response
 	  */
-	  asObject() HttpResponse
- 
-	 /**
-	  * Executes the request and returns the response with the body mapped into T by a configured ObjectMapper
-	  * @param genericType the genertic type to return. This will be passed to the ObjectMapper
-	  * @param <T> the return type
-	  * @return a response
-	  */
-	  asObject(GenericType<T> genericType) HttpResponse
+	  AsObject() HttpResponse
  
 	 /**
 	  * Execute the request and pass the raw response to a function for mapping.
@@ -201,7 +193,7 @@ type HttpRequest interface {
 	  * @param <T> The type of the response mapping
 	  * @return A HttpResponse containing T as the body
 	  */
-	 <T> HttpResponse<T> asObject(Function<RawResponse, T> function);
+	  AsObject(Function<RawResponse, T> function) HttpResponse
  
 	 
 	 /**
@@ -210,7 +202,7 @@ type HttpRequest interface {
 	  * @param copyOptions options specifying how the copy should be done
 	  * @return a HttpResponse with the file containing the results
 	  */
-	 HttpResponse<File> asFile(String path, CopyOption... copyOptions);
+	  AsFile(String path, CopyOption... copyOptions) FileHttpResponse 
  
 	 /**
 	  * Allows for following paging links common in many APIs.
